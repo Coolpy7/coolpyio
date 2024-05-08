@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
-	"coolpyio/mempool"
-	"coolpyio/pollio"
 	"flag"
 	"fmt"
+	"github.com/Coolpy7/coolpyio/mempool"
+	"github.com/Coolpy7/coolpyio/pollio"
 	"golang.org/x/sys/unix"
 	"log"
 	"os"

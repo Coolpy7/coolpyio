@@ -1,4 +1,4 @@
-module coolpyio
+module github.com/Coolpy7/coolpyio
 
 go 1.21.5
 

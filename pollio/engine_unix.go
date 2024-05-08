@@ -4,7 +4,7 @@
 package pollio
 
 import (
-	"coolpy-io/timer"
+	"github.com/Coolpy7/coolpyio/timer"
 	"net"
 	"runtime"
 )

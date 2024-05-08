@@ -4,9 +4,9 @@
 package pollio
 
 import (
-	"coolpy-io/mempool"
-	"coolpy-io/timer"
 	"errors"
+	"github.com/Coolpy7/coolpyio/mempool"
+	"github.com/Coolpy7/coolpyio/timer"
 	"net"
 	"runtime"
 	"strconv"
