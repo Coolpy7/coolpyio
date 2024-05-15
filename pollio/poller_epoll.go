@@ -6,7 +6,6 @@ package pollio
 import (
 	"errors"
 	"fmt"
-	"golang.org/x/sys/unix"
 	"io"
 	"net"
 	"os"
@@ -280,16 +279,6 @@ func newPoller(g *Engine, isListener bool, index int) (*poller, error) {
 		addr := g.addrs[index%len(g.addrs)]
 		ln, err := g.listen(g.network, addr)
 		if err != nil {
-			return nil, err
-		}
-
-		file, err := ln.(*net.TCPListener).File() // note: File method gives us a copy of the file descriptor
-		if err != nil {
-			_ = file.Close()
-			return nil, err
-		}
-		if err = unix.SetsockoptInt(int(file.Fd()), unix.SOL_SOCKET, unix.SO_REUSEPORT, 1); err != nil {
-			_ = file.Close()
 			return nil, err
 		}
 
